@@ -1,0 +1,19 @@
+linux-image-amd64        Essential runtime; Debian kernel package for the initial ISO
+systemd                  Essential init and service manager
+systemd-sysv             Systemd as /sbin/init
+busybox                  Essential small utility fallback
+python3                  Essential runtime for the inference application
+python3-pip              Required only to install a pinned ONNX wheel when Debian package is unavailable
+python3-numpy            Numeric array support
+python3-pil              Image loading and preprocessing
+udev                     Device node and VirtIO device management
+e2fsprogs                Essential filesystem utilities
+squashfs-tools           Read-only SquashFS support
+ca-certificates          TLS trust for build-time downloads only
+iproute2                 Network interface management
+iputils-ping             Network troubleshooting
+isc-dhcp-client          DHCP network configuration
+procps                   Process and memory diagnostics
+sudo                     Controlled privilege delegation
+adduser                  Dedicated miniml account creation
+

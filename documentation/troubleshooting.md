@@ -1,0 +1,31 @@
+# Troubleshooting
+
+## Live-build refuses to run
+
+Check architecture with `uname -m`. Native build requires x86_64. Use Ubuntu 24.04 or Debian 12 in WSL2, UTM, or a Linux VM.
+
+## Model download fails
+
+Install Git LFS, verify network access, and rerun `ml/download_model.sh`.
+
+## ONNX Runtime cannot import
+
+Check Python and wheel versions:
+
+```bash
+python3 --version
+python3 -m pip show onnxruntime
+python3 -c "import onnxruntime as ort; print(ort.get_available_providers())"
+```
+
+## QEMU does not find the ISO
+
+Verify `file output/MiniML-Linux.iso`, rerun `build/verify_build.sh`, and ensure the ISO was copied with its SHA256 file.
+
+## systemd service fails
+
+```bash
+systemctl status miniml-inference.service --no-pager
+journalctl -u miniml-inference.service --no-pager
+systemctl show -p ExecStart miniml-inference.service
+```

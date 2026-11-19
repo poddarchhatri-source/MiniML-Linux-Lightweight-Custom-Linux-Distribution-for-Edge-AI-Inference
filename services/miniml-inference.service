@@ -1,0 +1,31 @@
+[Unit]
+Description=MiniML Linux CPU Image Classification
+After=local-fs.target network.target
+Requires=local-fs.target
+
+[Service]
+Type=oneshot
+User=miniml
+Group=miniml
+WorkingDirectory=/opt/miniml
+ExecStart=/usr/bin/python3 /opt/miniml/ml/inference.py --iterations 1
+StandardOutput=journal
+StandardError=journal
+Restart=on-failure
+RestartSec=5
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+NoNewPrivileges=true
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+LockPersonality=true
+PrivateDevices=true
+ReadOnlyPaths=/opt/miniml
+
+[Install]
+WantedBy=multi-user.target
+

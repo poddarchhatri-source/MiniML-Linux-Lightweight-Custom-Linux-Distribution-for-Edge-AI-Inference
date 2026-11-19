@@ -1,0 +1,35 @@
+# Build products
+/output/
+/build/cache/
+/build/chroot/
+/build/config/
+/build/debian/
+/build/live/
+*.iso
+*.img
+*.squashfs
+*.deb
+
+# Kernel build products
+/kernel/linux/
+/kernel/linux-*/
+/kernel/*.tar*
+/kernel/*.patch
+/kernel/*.old
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Models and downloads
+/ml/model/*.onnx
+/ml/model/*.onnx.data
+
+# Logs and temporary files
+*.log
+*.tmp
+/tmp/
+

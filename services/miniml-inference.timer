@@ -1,0 +1,11 @@
+[Unit]
+Description=Periodic MiniML Linux CPU inference health check
+
+[Timer]
+OnBootSec=30s
+OnUnitActiveSec=10min
+Unit=miniml-inference.service
+
+[Install]
+WantedBy=timers.target
+

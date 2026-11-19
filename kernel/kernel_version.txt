@@ -1,0 +1,3 @@
+Target kernel: 6.1.x LTS (Debian 12-compatible)
+Exact version: record by running scripts/kernel_report.sh on the Linux build host
+
