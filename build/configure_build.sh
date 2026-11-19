@@ -15,7 +15,8 @@ mkdir -p build/live/auto build/live/package-lists \
          config/live-build config/boot config/filesystem config/security
 
 cat > build/live/auto/config <<'EOF'
-lb config \
+#!/bin/sh
+lb config noauto \
   --distribution bookworm \
   --architecture amd64 \
   --binary-images iso-hybrid \
@@ -23,8 +24,10 @@ lb config \
   --debootstrap-options "--variant=minbase" \
   --bootappend-live "boot=live components persistence username=miniml" \
   --apt-indices false \
-  --apt-recommends false
+  --apt-recommends false \
+  "$@"
 EOF
+chmod +x build/live/auto/config
 
 cp build/live/auto/config config/live-build.auto.config.txt
 
