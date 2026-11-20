@@ -10,12 +10,12 @@ Install Git LFS, verify network access, and rerun `ml/download_model.sh`.
 
 ## ONNX Runtime cannot import
 
-Check Python and wheel versions:
+The inference runtime is installed in its dedicated virtual environment:
 
 ```bash
-python3 --version
-python3 -m pip show onnxruntime
-python3 -c "import onnxruntime as ort; print(ort.get_available_providers())"
+/opt/miniml/venv/bin/python --version
+/opt/miniml/venv/bin/python -m pip show onnxruntime
+/opt/miniml/venv/bin/python -c "import onnxruntime as ort; print(ort.get_available_providers())"
 ```
 
 ## QEMU does not find the ISO

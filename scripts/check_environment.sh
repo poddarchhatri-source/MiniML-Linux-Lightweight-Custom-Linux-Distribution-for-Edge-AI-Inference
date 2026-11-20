@@ -42,7 +42,7 @@ df -h .
 printf '\nTools:\n'
 for tool in git python3 pip3 gcc make live-build lb debootstrap \
             xorriso mksquashfs qemu-system-x86_64 qemu-img \
-            rsync curl wget unzip file systemd-analyze; do
+            rsync curl wget unzip file cpio systemd-analyze; do
     check_command "$tool"
 done
 

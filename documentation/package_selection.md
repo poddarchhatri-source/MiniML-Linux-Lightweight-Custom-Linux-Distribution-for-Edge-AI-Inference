@@ -4,4 +4,4 @@ The runtime package manifest is intentionally limited to systemd, Python, ONNX R
 
 Build-only tools such as GCC, Make, kernel headers, xorriso, and Live-build are not copied into the final image unless required at runtime.
 
-ONNX Runtime is pinned to `1.17.1`, NumPy to `1.26.4`, and Pillow to `10.4.0` for the Debian 12 Python 3.11 environment. Availability must be verified on the build host before use.
+ONNX Runtime is pinned to `1.17.1`, NumPy to `1.26.4`, and Pillow to `10.4.0` for the Debian 12 Python 3.11 environment. The build installs these requirements into `/opt/miniml/venv` so they do not conflict with Debian-managed Python packages. Building requires network access to PyPI.
